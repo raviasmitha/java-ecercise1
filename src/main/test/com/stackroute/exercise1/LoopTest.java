@@ -10,26 +10,24 @@ public class LoopTest {
     @Before
     public void setUp(){
         printNumbers = new Loop();
-        System.out.println("before");
     }
     @After
     public void tearDown(){
         printNumbers = null;
-        System.out.println("after");
     }
     @Test
-    public  void givenANumberShouldReturnSeriesOfthatNumber() {
+    public  void testGivenANumberShouldReturnSeriesOfthatNumber() {
         String result = printNumbers.looping(5);
         assertEquals("122333444455555", result);
     }
     @Test
-    public  void givenANumberShouldReturnSeriesOfthatNumbe() {
-        String result = printNumbers.looping(5);
-        assertEquals("122333444455555", result);
+    public  void testGivenANegativeNumberShouldReturnErrorMesage() {
+        String result = printNumbers.looping(-1);
+        assertEquals("should give positive numbers", result);
     }
     @Test
-    public  void givenANumberShouldReturnSeriesOfthatNumb() {
-        String result = printNumbers.looping(5);
-        assertEquals("122333444455555", result);
+    public  void testGivenZeroShouldReturnEmpty() {
+        String result = printNumbers.looping(0);
+        assertEquals("", result);
     }
 }
